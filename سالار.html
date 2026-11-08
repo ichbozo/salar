@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سالار | مطوّر برمجيات من كردستان</title>
+<meta name="description" content="سالار، مطوّر برمجيات من كردستان. أبني مواقع وتطبيقات وأدوات نظيفة وسريعة. شاهد أعمالي وتواصل معي.">
+<meta name="author" content="Salar">
+<meta name="theme-color" content="#0b0d10">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ichbozo.github.io/salar/">
+<link rel="canonical" href="https://ichbozo.github.io/salar/">
+<meta property="og:site_name" content="Salar">
+<meta property="og:title" content="سالار | مطوّر برمجيات من كردستان">
+<meta property="og:description" content="مواقع وتطبيقات وأدوات نظيفة وسريعة. شاهد أعمالي وتواصل معي.">
+<meta property="og:image" content="https://ichbozo.github.io/salar/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="سالار | مطوّر برمجيات من كردستان">
+<meta name="twitter:description" content="مواقع وتطبيقات وأدوات نظيفة وسريعة. شاهد أعمالي وتواصل معي.">
+<meta name="twitter:image" content="https://ichbozo.github.io/salar/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Salar","jobTitle":"Software Developer","email":"avan9000b@gmail.com","address":{"@type":"PostalAddress","addressRegion":"Kurdistan"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d10;--fg:#f4f1ea;--muted:#a6a9ad;--card:rgba(255,255,255,.05);--line:rgba(255,255,255,.12);
+  --red:#e8262d;--green:#1f9d4c;--gold:#febd11;--flag-op:.28;--grad:to left;--origin:100% 50%;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root[dir="ltr"]{--grad:to right;--origin:0% 50%}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:#f7f4ec;--fg:#16181b;--muted:#5d6166;--card:rgba(0,0,0,.04);--line:rgba(0,0,0,.12);--flag-op:.32}
+}
+:root[data-theme="light"]{--bg:#f7f4ec;--fg:#16181b;--muted:#5d6166;--card:rgba(0,0,0,.04);--line:rgba(0,0,0,.12);--flag-op:.32}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Cairo",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;line-height:1.8;overflow-x:hidden}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+#progress{position:fixed;top:0;inset-inline:0;height:3px;z-index:30;transform-origin:var(--origin);transform:scaleX(0);background:linear-gradient(var(--grad),var(--red),var(--gold),var(--green))}
+.flag{position:fixed;inset:0;z-index:-2;opacity:var(--flag-op);
+  background:linear-gradient(to bottom,var(--red) 0 33.3%,#fff 33.3% 66.6%,var(--green) 66.6% 100%);
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 20%,#000 20%,transparent 85%);mask-image:radial-gradient(120% 90% at 50% 20%,#000 20%,transparent 85%);filter:blur(1.5px)}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 50% 0,transparent 0,var(--bg) 95%);opacity:.55}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 70%,transparent)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:.8rem;flex-wrap:wrap}
+nav b{font-weight:800;letter-spacing:.02em;display:flex;align-items:center;gap:.6rem}
+nav b svg{width:26px;height:26px}
+nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0;font-size:.95rem;color:var(--muted)}
+nav ul a{transition:color .3s;white-space:nowrap}
+nav ul a:hover,nav ul a.on{color:var(--fg)}
+nav ul a.on{border-bottom:2px solid var(--gold);padding-bottom:2px}
+.tools{display:flex;gap:.5rem;align-items:center}
+@media(max-width:760px){
+  nav ul{order:3;width:100%;overflow-x:auto;gap:1.1rem;font-size:.85rem;padding-bottom:.4rem;scrollbar-width:none}
+  nav ul::-webkit-scrollbar{display:none}
+}
+
+/* shared button feel */
+[data-ripple]{position:relative;overflow:hidden}
+.rip{position:absolute;border-radius:50%;background:currentColor;opacity:.25;transform:scale(0);animation:rip .65s ease-out forwards;pointer-events:none;z-index:3}
+@keyframes rip{to{transform:scale(1);opacity:0}}
+.icon-btn{min-width:38px;height:38px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;font-size:.9rem;padding:0 .7rem;flex:none;transition:transform .3s,border-color .3s,box-shadow .3s}
+.icon-btn svg{width:18px;height:18px;transition:transform .5s}
+.icon-btn:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 20px rgba(254,189,17,.15)}
+.icon-btn:active{transform:scale(.94)}
+#theme:hover svg{transform:rotate(180deg)}
+.lang{position:relative}
+.menu{position:absolute;inset-inline-end:0;top:calc(100% + 8px);min-width:160px;margin:0;padding:.4rem;list-style:none;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 18px 40px rgba(0,0,0,.35);z-index:40;animation:pop .2s ease-out}
+.menu[hidden]{display:none}
+@keyframes pop{from{opacity:0;transform:translateY(-6px) scale(.97)}}
+.menu button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.5rem .8rem;border:0;border-radius:10px;background:none;color:var(--fg);font-size:.95rem;cursor:pointer;text-align:start}
+.menu button:hover{background:var(--card)}
+.menu button[aria-current="true"]{color:var(--gold);font-weight:600}
+.menu small{color:var(--muted);font-size:.75rem}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:grid;align-items:center;overflow:hidden}
+.sun{position:absolute;inset-inline-start:-14%;top:50%;width:min(720px,110vw);aspect-ratio:1;transform:translateY(-50%);opacity:.2;pointer-events:none;color:var(--gold)}
+.sun svg{width:100%;height:100%;animation:spin 140s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero .wrap{position:relative;z-index:1}
+.hi{color:var(--gold);font-weight:600;letter-spacing:.08em}
+h1{font-size:clamp(2.2rem,6.4vw,4.6rem);line-height:1.25;margin:.4rem 0 1rem;font-weight:800;max-width:15ch}
+:lang(en) h1,:lang(tr) h1{max-width:18ch;font-size:clamp(2rem,5.4vw,3.9rem)}
+h1 .w{display:inline-block;margin-inline-end:.28em;will-change:filter,opacity,transform}
+.lead{max-width:48ch;color:var(--muted);font-size:1.1rem;margin:0 0 2rem}
+.stripe{display:flex;height:4px;width:96px;margin-bottom:1.4rem;border-radius:4px;overflow:hidden}
+.stripe i{flex:1}.stripe i:nth-child(1){background:var(--red)}.stripe i:nth-child(2){background:#fff}.stripe i:nth-child(3){background:var(--green)}
+.cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.ghost{display:inline-block;padding:.8rem 1.8rem;border:1px solid var(--line);border-radius:999px;font-weight:600;background:var(--card);transition:transform .3s,border-color .3s,box-shadow .3s}
+.ghost:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 26px rgba(254,189,17,.16)}
+.ghost:active{transform:scale(.96)}
+.star{position:relative;display:inline-block;border-radius:999px;overflow:hidden;padding:1px 0;isolation:isolate;transition:transform .3s,box-shadow .3s}
+.star:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(254,189,17,.22)}
+.star:active{transform:scale(.96)}
+.star::before,.star::after{content:"";position:absolute;width:300%;height:50%;opacity:.75;border-radius:50%;z-index:0;
+  background:radial-gradient(circle,var(--gold),transparent 10%);animation:sb 7s linear infinite alternate}
+.star::before{bottom:-11px;right:-250%}
+.star::after{top:-10px;left:-250%;animation-direction:alternate-reverse}
+@keyframes sb{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.star span{position:relative;z-index:1;display:block;padding:.8rem 2.2rem;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-weight:600}
+
+section{padding:6rem 0}
+h2{font-size:clamp(1.6rem,3.6vw,2.4rem);margin:0 0 1.2rem;font-weight:800}
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center}
+@media(max-width:780px){.two{grid-template-columns:1fr}}
+p{margin:0 0 1rem;color:var(--muted)}
+
+/* realistic flag */
+.mini-wrap{perspective:900px}
+.mini{aspect-ratio:3/2;border-radius:6px;overflow:hidden;position:relative;transition:transform .25s ease-out;transform-style:preserve-3d;
+  box-shadow:0 2px 4px rgba(0,0,0,.25),0 24px 50px rgba(0,0,0,.38);
+  background:linear-gradient(to bottom,var(--red) 0 33.333%,#fff 33.333% 66.666%,var(--green) 66.666% 100%)}
+.mini svg{position:absolute;inset:0;margin:auto;height:76%;width:auto;aspect-ratio:1;color:var(--gold)}
+.mini::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(0,0,0,.045) 0 2px,rgba(255,255,255,.03) 2px 4px),repeating-linear-gradient(0deg,rgba(0,0,0,.035) 0 2px,transparent 2px 4px)}
+.mini::after{content:"";position:absolute;inset:-20% -60%;z-index:3;pointer-events:none;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.28) 50%,transparent 60%);animation:sheen 7s ease-in-out infinite}
+@keyframes sheen{0%,55%{transform:translateX(-60%)}100%{transform:translateX(60%)}}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:620px){.stats{grid-template-columns:1fr}}
+.stat{padding:1.6rem;border:1px solid var(--line);border-radius:16px;background:var(--card);text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.stat strong{display:block;font-size:2.8rem;font-weight:800;line-height:1.2;color:var(--fg)}
+.stat span{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.chips span{padding:.3rem 1rem;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:.92rem;transition:transform .3s,border-color .3s}
+.chips span:hover{transform:translateY(-3px);border-color:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:780px){.cards{grid-template-columns:1fr}}
+.card{padding:1.6rem;border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:0 10px 30px rgba(0,0,0,.12);transition:transform .4s,border-color .4s,box-shadow .4s}
+.card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 22px 44px rgba(0,0,0,.25)}
+.card[hidden]{display:none}
+.card h3{margin:0 0 .4rem;font-size:1.15rem}
+.card em{font-style:normal;color:var(--gold);font-size:.85rem}
+.skills{display:grid;gap:1.2rem;max-width:720px}
+.sk-h{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:.3rem}
+.sk-h b{color:var(--gold);font-weight:600}
+.bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:100%;transform:scaleX(var(--l));transform-origin:var(--origin);background:linear-gradient(var(--grad),var(--red),var(--gold),var(--green));border-radius:6px}
+.pat{height:12px;margin:0 auto;width:min(1100px,100% - 2.5rem);opacity:.45;background:linear-gradient(135deg,var(--gold) 25%,transparent 25%) -6px 0/12px 12px,linear-gradient(225deg,var(--gold) 25%,transparent 25%) -6px 0/12px 12px}
+.words{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media(max-width:780px){.words{grid-template-columns:repeat(2,1fr)}}
+.words div{padding:1.4rem;border:1px solid var(--line);border-radius:16px;background:var(--card);text-align:center;transition:transform .3s,border-color .3s}
+.words div:hover{transform:translateY(-4px);border-color:var(--gold)}
+.words strong{display:block;font-size:1.8rem;line-height:1.5}
+.words span{color:var(--gold);font-size:.9rem}
+
+/* timeline */
+.tl{position:relative;max-width:720px;margin:0;list-style:none;border-inline-start:2px solid var(--line);padding:0;padding-inline-start:1.8rem}
+.tl li{position:relative;margin-bottom:2rem}
+.tl li::before{content:"";position:absolute;inset-inline-start:calc(-1.8rem - 7px);top:.65rem;width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px var(--bg)}
+.tl time{color:var(--gold);font-size:.85rem;font-weight:600}
+.tl h3{margin:.1rem 0 .2rem;font-size:1.1rem}
+.tl p{margin:0}
+
+/* filters */
+.filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.filters button{font-size:.92rem;color:var(--fg);padding:.35rem 1.2rem;border:1px solid var(--line);border-radius:999px;background:var(--card);cursor:pointer;transition:transform .3s,border-color .3s,background .3s,color .3s}
+.filters button:hover{transform:translateY(-2px);border-color:var(--gold)}
+.filters button:active{transform:scale(.95)}
+.filters button[aria-pressed="true"]{border-color:var(--gold);color:#16181b;background:var(--gold);font-weight:600}
+
+/* form */
+form{display:grid;gap:.9rem;max-width:560px;margin-top:1.6rem}
+form label{display:grid;gap:.3rem;font-size:.92rem;color:var(--muted)}
+form input,form textarea{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;width:100%;transition:border-color .3s,box-shadow .3s}
+form input:focus,form textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(254,189,17,.18)}
+form textarea{min-height:130px;resize:vertical}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+.send{justify-self:start;display:inline-flex;align-items:center;gap:.6rem;font-weight:600;color:#16181b;background:linear-gradient(110deg,var(--gold),#ffd566 45%,var(--gold));background-size:200% 100%;border:0;border-radius:999px;padding:.85rem 2.2rem;cursor:pointer;box-shadow:0 10px 26px rgba(254,189,17,.25);transition:transform .3s,box-shadow .3s,background-position .6s}
+.send:hover{transform:translateY(-3px);background-position:100% 0;box-shadow:0 16px 34px rgba(254,189,17,.34)}
+.send:active{transform:scale(.96)}
+.send:disabled{opacity:.8;cursor:progress;transform:none}
+.send .sp{display:none;width:16px;height:16px;border:2px solid rgba(0,0,0,.25);border-top-color:#16181b;border-radius:50%;animation:spin 0.7s linear infinite}
+.send.loading .sp{display:block}
+.send.done{background:var(--green);color:#fff}
+.note{font-size:.9rem;color:var(--gold);min-height:1.5em;margin:0}
+.note.bad{color:var(--red)}
+
+/* social buttons */
+.links{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem;align-items:center}
+.soc{position:relative;display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--fg);font-size:.95rem;cursor:pointer;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.soc svg{width:18px;height:18px;flex:none;transition:transform .4s}
+.soc::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(254,189,17,.28) 50%,transparent 70%);transform:translateX(-130%);transition:transform .7s}
+.soc:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 12px 26px rgba(254,189,17,.16)}
+.soc:hover::before{transform:translateX(130%)}
+.soc:hover svg{transform:rotate(-8deg) scale(1.15)}
+.soc:active{transform:scale(.95)}
+footer{border-top:1px solid var(--line);padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
+#top{position:fixed;inset-inline-start:1.2rem;bottom:calc(1.2rem + env(safe-area-inset-bottom,0px));z-index:20;opacity:0;pointer-events:none;width:44px;height:44px;padding:0;background:var(--bg);box-shadow:0 10px 26px rgba(0,0,0,.35)}
+#top.show{opacity:1;pointer-events:auto}
+@media(prefers-reduced-motion:reduce){.sun svg,.star::before,.star::after,.mini::after{animation:none}.card,.soc,.icon-btn,.ghost,.send{transition:none}}
+.t p{font-size:1.05rem;margin:0}
+.t cite{display:block;margin-top:.9rem;color:var(--gold);font-style:normal;font-weight:600}
+#vis{display:block;margin-top:.7rem;font-size:.85rem}
+</style>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<div class="flag" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+
+<nav><div class="wrap">
+  <b><svg class="sunsvg" viewBox="-100 -100 200 200" style="color:var(--gold)"></svg><span data-i18n="brand">سالار</span></b>
+  <ul>
+    <li><a href="#about" data-i18n="nAbout">عنّي</a></li>
+    <li><a href="#skills" data-i18n="nSkills">مهاراتي</a></li>
+    <li><a href="#journey" data-i18n="nJourney">رحلتي</a></li>
+    <li><a href="#work" data-i18n="nWork">أعمالي</a></li>
+    <li><a href="#contact" data-i18n="nContact">تواصل</a></li>
+  </ul>
+  <div class="tools">
+    <div class="lang">
+      <button class="icon-btn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" data-ripple data-i18n-aria="aLang" aria-label="اللغة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg>
+        <span id="langCode">AR</span>
+      </button>
+      <ul class="menu" id="langMenu" hidden>
+        <li><button type="button" data-lang="ar" lang="ar">العربية <small>AR</small></button></li>
+        <li><button type="button" data-lang="en" lang="en">English <small>EN</small></button></li>
+        <li><button type="button" data-lang="tr" lang="tr">Türkçe <small>TR</small></button></li>
+        <li><button type="button" data-lang="ku" lang="ckb">کوردی <small>KU</small></button></li>
+      </ul>
+    </div>
+    <button class="icon-btn" id="theme" type="button" data-ripple data-i18n-aria="aTheme" aria-label="تبديل الوضع الداكن والفاتح">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+    </button>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="sun" aria-hidden="true"><svg class="sunsvg" viewBox="-100 -100 200 200"></svg></div>
+  <div class="wrap">
+    <div class="stripe" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="hi" data-i18n="hi">سڵاو، أنا سالار</div>
+    <h1 id="title" data-i18n="title">مطوّر برمجيات من كردستان يحوّل الأفكار إلى مواقع وتطبيقات</h1>
+    <p class="lead" data-i18n="lead">أحب عالم البرمجة، وأبني منتجات رقمية نظيفة وسريعة بتفاصيل مدروسة.</p>
+    <div class="cta">
+      <a class="star" href="#work" data-ripple><span data-i18n="cta1">شاهد أعمالي</span></a>
+      <a class="ghost" href="#contact" data-ripple data-i18n="cta2">تواصل معي</a>
+    </div>
+  </div>
+</header>
+
+<section id="about"><div class="wrap two">
+  <div data-reveal>
+    <h2 data-i18n="aboutH">عنّي</h2>
+    <p data-i18n="aboutP1">اسمي سالار، من كردستان. شغفي بالبرمجة بدأ بالفضول، وصار طريقة أفكّر بها وأصنع بها أشياء مفيدة.</p>
+    <p data-i18n="aboutP2">أؤمن أن الكود الجيد يشبه الحرفة التقليدية: صبر، ودقة، وهوية واضحة.</p>
+    <div class="chips"><span>JavaScript</span><span>React</span><span>Python</span><span>HTML &amp; CSS</span><span>Git</span></div>
+  </div>
+  <div class="mini-wrap" data-reveal>
+    <div class="mini" id="flagBox" role="img" data-i18n-aria="aFlag" aria-label="علم كردستان"><svg class="sunsvg" viewBox="-100 -100 200 200"></svg></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="stats" data-reveal>
+    <div class="stat"><strong data-count="20">0</strong><span data-i18n="st1">مشروع</span></div>
+    <div class="stat"><strong data-count="4">0</strong><span data-i18n="st2">سنوات من التعلّم</span></div>
+    <div class="stat"><strong data-count="6">0</strong><span data-i18n="st3">لغات وأدوات</span></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2 data-reveal data-i18n="skillsH">مهاراتي</h2>
+  <div class="skills" data-reveal>
+    <div class="sk"><div class="sk-h"><span>HTML &amp; CSS</span><b>90%</b></div><div class="bar"><i style="--l:.9"></i></div></div>
+    <div class="sk"><div class="sk-h"><span>JavaScript</span><b>85%</b></div><div class="bar"><i style="--l:.85"></i></div></div>
+    <div class="sk"><div class="sk-h"><span>React</span><b>80%</b></div><div class="bar"><i style="--l:.8"></i></div></div>
+    <div class="sk"><div class="sk-h"><span>Python</span><b>75%</b></div><div class="bar"><i style="--l:.75"></i></div></div>
+    <div class="sk"><div class="sk-h"><span>Git &amp; GitHub</span><b>70%</b></div><div class="bar"><i style="--l:.7"></i></div></div>
+  </div>
+</div></section>
+
+<div class="pat" aria-hidden="true"></div>
+
+<section id="journey"><div class="wrap">
+  <h2 data-reveal data-i18n="journeyH">رحلتي</h2>
+  <ol class="tl" data-reveal>
+    <li><time data-i18n="j1t">البداية</time><h3 data-i18n="j1h">أول سطر كود</h3><p data-i18n="j1p">بدأت بالفضول: صفحات HTML بسيطة وتجارب صغيرة.</p></li>
+    <li><time data-i18n="j2t">التعمّق</time><h3 data-i18n="j2h">JavaScript وReact</h3><p data-i18n="j2p">انتقلت إلى بناء واجهات تفاعلية وتطبيقات كاملة.</p></li>
+    <li><time data-i18n="j3t">التوسّع</time><h3 data-i18n="j3h">Python والخوادم</h3><p data-i18n="j3p">بدأت ببناء واجهات API وأدوات تعمل في الخلفية.</p></li>
+    <li><time data-i18n="j4t">اليوم</time><h3 data-i18n="j4h">مشاريع حقيقية</h3><p data-i18n="j4p">أعمل على منتجات نظيفة وسريعة، وأتعلّم كل يوم.</p></li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <h2 data-reveal data-i18n="kuH">بالكردية</h2>
+  <p data-reveal data-i18n="kuP">كلمات من لغتي الأم، أحملها معي في كل ما أبنيه.</p>
+  <div class="words" data-reveal>
+    <div lang="ckb"><strong>سڵاو</strong><span data-i18n="m1" lang="">مرحباً</span></div>
+    <div lang="ckb"><strong>سوپاس</strong><span data-i18n="m2" lang="">شكراً</span></div>
+    <div lang="ckb"><strong>بەخێربێیت</strong><span data-i18n="m3" lang="">أهلاً بك</span></div>
+    <div lang="ckb"><strong>کوردستان</strong><span data-i18n="m4" lang="">كردستان</span></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <h2 data-reveal data-i18n="workH">أعمالي</h2>
+  <div class="filters" role="group" data-i18n-aria="aFilter" aria-label="تصفية الأعمال">
+    <button type="button" data-f="all" aria-pressed="true" data-ripple data-i18n="fAll">الكل</button>
+    <button type="button" data-f="web" aria-pressed="false" data-ripple data-i18n="fWeb">ويب</button>
+    <button type="button" data-f="python" aria-pressed="false" data-ripple>Python</button>
+    <button type="button" data-f="tool" aria-pressed="false" data-ripple data-i18n="fTool">أدوات</button>
+  </div>
+  <div class="cards">
+    <article class="card" data-cat="web" data-reveal><em data-i18n="c1e">ويب · React</em><h3 data-i18n="c1h">لوحة مهام ذكية</h3><p data-i18n="c1p">تطبيق لإدارة المهام بالسحب والإفلات، مع وضع داكن وحفظ تلقائي وبحث فوري. مبني بـ React وTypeScript.</p></article>
+    <article class="card" data-cat="python" data-reveal><em data-i18n="c2e">Python · API</em><h3 data-i18n="c2h">خدمة اختصار الروابط</h3><p data-i18n="c2p">واجهة REST سريعة بـ FastAPI لاختصار الروابط، مع إحصاءات للنقرات وحدّ للطلبات وتوثيق تلقائي.</p></article>
+    <article class="card" data-cat="tool python" data-reveal><em data-i18n="c3e">أداة · CLI</em><h3 data-i18n="c3h">مُنظِّم الملفات التلقائي</h3><p data-i18n="c3p">أداة سطر أوامر بـ Python ترتّب مجلد التنزيلات حسب النوع والتاريخ بأمر واحد، وتدعم التراجع عن العملية.</p></article>
+  </div>
+</div></section>
+
+<section id="voices" hidden><div class="wrap">
+  <h2 data-reveal data-i18n="testH">آراء من تعاملوا معي</h2>
+  <div class="cards" id="tcards"></div>
+</div></section>
+
+<section id="contact"><div class="wrap" data-reveal>
+  <h2 data-i18n="contactH">لنبنِ شيئاً معاً</h2>
+  <p data-i18n="contactP">عندك فكرة أو مشروع؟ راسلني وسنتحدث.</p>
+  <form id="cf" novalidate>
+    <input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label><span data-i18n="lName">الاسم</span><input name="name" required autocomplete="name"></label>
+    <label><span data-i18n="lEmail">بريدك الإلكتروني</span><input name="email" type="email" required autocomplete="email" dir="ltr"></label>
+    <label><span data-i18n="lMsg">رسالتك</span><textarea name="message" required></textarea></label>
+    <button class="send" id="send" type="submit" data-ripple><span class="sp" aria-hidden="true"></span><span id="sendTxt" data-i18n="send">إرسال الرسالة</span></button>
+    <p class="note" id="note" role="status" aria-live="polite"></p>
+  </form>
+  <div class="links">
+    <a class="soc" href="mailto:avan9000b@gmail.com" data-ripple>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      <span dir="ltr">avan9000b@gmail.com</span>
+    </a>
+    <button class="soc" type="button" id="copy" data-ripple>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
+      <span id="copyTxt" data-i18n="copy">نسخ البريد</span>
+    </button>
+    <a class="soc" id="wa" href="#" target="_blank" rel="noopener" data-ripple>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span dir="ltr">WhatsApp</span>
+    </a>
+    <a class="soc" id="shareWa" href="#" target="_blank" rel="noopener" data-ripple>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+      <span data-i18n="shareWa">شارك عبر واتساب</span>
+    </a>
+  </div>
+</div></section>
+
+<footer><span data-i18n="footer">© {y} سالار · صُنع بحب في كردستان</span><small id="vis" hidden><b id="visN"></b> <span data-i18n="visitors">زيارة</span></small></footer>
+
+<button class="icon-btn" id="top" type="button" data-ripple data-i18n-aria="aTop" aria-label="العودة للأعلى">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+var MAIL="avan9000b@gmail.com";
+
+/* ---------- Kurdistan flag sun: 21 rays, no gap ring ---------- */
+document.querySelectorAll(".sunsvg").forEach(function(s){
+  var h='<circle r="34" fill="currentColor"/>';
+  for(var i=0;i<21;i++)h+='<polygon points="-8,-30 0,-97 8,-30" fill="currentColor" transform="rotate('+(i*360/21)+')"/>';
+  s.innerHTML=h;
+});
+
+/* ---------- Translations ---------- */
+var I18N={
+ar:{code:"ar",dir:"rtl",short:"AR",doc:"سالار | مطوّر برمجيات من كردستان",
+brand:"سالار",nAbout:"عنّي",nSkills:"مهاراتي",nJourney:"رحلتي",nWork:"أعمالي",nContact:"تواصل",
+hi:"سڵاو، أنا سالار",title:"مطوّر برمجيات من كردستان يحوّل الأفكار إلى مواقع وتطبيقات",
+lead:"أحب عالم البرمجة، وأبني منتجات رقمية نظيفة وسريعة بتفاصيل مدروسة.",cta1:"شاهد أعمالي",cta2:"تواصل معي",
+aboutH:"عنّي",aboutP1:"اسمي سالار، من كردستان. شغفي بالبرمجة بدأ بالفضول، وصار طريقة أفكّر بها وأصنع بها أشياء مفيدة.",
+aboutP2:"أؤمن أن الكود الجيد يشبه الحرفة التقليدية: صبر، ودقة، وهوية واضحة.",
+st1:"مشروع",st2:"سنوات من التعلّم",st3:"لغات وأدوات",skillsH:"مهاراتي",journeyH:"رحلتي",
+j1t:"البداية",j1h:"أول سطر كود",j1p:"بدأت بالفضول: صفحات HTML بسيطة وتجارب صغيرة.",
+j2t:"التعمّق",j2h:"JavaScript وReact",j2p:"انتقلت إلى بناء واجهات تفاعلية وتطبيقات كاملة.",
+j3t:"التوسّع",j3h:"Python والخوادم",j3p:"بدأت ببناء واجهات API وأدوات تعمل في الخلفية.",
+j4t:"اليوم",j4h:"مشاريع حقيقية",j4p:"أعمل على منتجات نظيفة وسريعة، وأتعلّم كل يوم.",
+kuH:"بالكردية",kuP:"كلمات من لغتي الأم، أحملها معي في كل ما أبنيه.",m1:"مرحباً",m2:"شكراً",m3:"أهلاً بك",m4:"كردستان",
+workH:"أعمالي",fAll:"الكل",fWeb:"ويب",fTool:"أدوات",
+c1e:"ويب · React",c1h:"لوحة مهام ذكية",c1p:"تطبيق لإدارة المهام بالسحب والإفلات، مع وضع داكن وحفظ تلقائي وبحث فوري. مبني بـ React وTypeScript.",
+c2e:"Python · API",c2h:"خدمة اختصار الروابط",c2p:"واجهة REST سريعة بـ FastAPI لاختصار الروابط، مع إحصاءات للنقرات وحدّ للطلبات وتوثيق تلقائي.",
+c3e:"أداة · CLI",c3h:"مُنظِّم الملفات التلقائي",c3p:"أداة سطر أوامر بـ Python ترتّب مجلد التنزيلات حسب النوع والتاريخ بأمر واحد، وتدعم التراجع عن العملية.",
+contactH:"لنبنِ شيئاً معاً",contactP:"عندك فكرة أو مشروع؟ راسلني وسنتحدث.",lName:"الاسم",lEmail:"بريدك الإلكتروني",lMsg:"رسالتك",
+send:"إرسال الرسالة",sending:"جارٍ الإرسال…",sent:"تم إرسال رسالتك، شكراً لك!",err:"تعذّر الإرسال الآن، سيُفتح تطبيق البريد بدلاً من ذلك.",invalid:"من فضلك املأ كل الحقول ببريد صحيح.",
+copy:"نسخ البريد",copied:"تم النسخ ✓",footer:"© {y} سالار · صُنع بحب في كردستان",
+aLang:"اللغة",aTheme:"تبديل الوضع الداكن والفاتح",aTop:"العودة للأعلى",aFlag:"علم كردستان",aFilter:"تصفية الأعمال",testH:"آراء من تعاملوا معي",shareWa:"شارك عبر واتساب",copyLink:"نسخ الرابط",visitors:"زيارة للموقع"},
+
+en:{code:"en",dir:"ltr",short:"EN",doc:"Salar | Software developer from Kurdistan",
+brand:"Salar",nAbout:"About",nSkills:"Skills",nJourney:"Journey",nWork:"Work",nContact:"Contact",
+hi:"Hi, I'm Salar",title:"A software developer from Kurdistan turning ideas into websites and apps",
+lead:"I love programming, and I build clean, fast digital products with carefully considered details.",cta1:"View my work",cta2:"Get in touch",
+aboutH:"About me",aboutP1:"I'm Salar, from Kurdistan. My passion for programming began as curiosity and became a way I think and a way I make useful things.",
+aboutP2:"I believe good code is like a traditional craft: patience, precision, and a clear identity.",
+st1:"Projects",st2:"Years of learning",st3:"Languages & tools",skillsH:"My skills",journeyH:"My journey",
+j1t:"The beginning",j1h:"The first line of code",j1p:"It began with curiosity: simple HTML pages and small experiments.",
+j2t:"Going deeper",j2h:"JavaScript & React",j2p:"I moved on to building interactive interfaces and full apps.",
+j3t:"Expanding",j3h:"Python & servers",j3p:"I started building APIs and tools that run behind the scenes.",
+j4t:"Today",j4h:"Real projects",j4p:"I work on clean, fast products, and I learn every day.",
+kuH:"In Kurdish",kuP:"Words from my mother tongue, which I carry into everything I build.",m1:"Hello",m2:"Thank you",m3:"Welcome",m4:"Kurdistan",
+workH:"My work",fAll:"All",fWeb:"Web",fTool:"Tools",
+c1e:"Web · React",c1h:"Smart task board",c1p:"A task manager with drag and drop, dark mode, autosave and instant search. Built with React and TypeScript.",
+c2e:"Python · API",c2h:"Link shortener service",c2p:"A fast REST API built with FastAPI that shortens links, with click statistics, rate limiting and automatic docs.",
+c3e:"Tool · CLI",c3h:"Automatic file organizer",c3p:"A Python command-line tool that sorts your downloads folder by type and date in a single command, with undo support.",
+contactH:"Let's build something together",contactP:"Got an idea or a project? Write to me and we'll talk.",lName:"Name",lEmail:"Your email",lMsg:"Your message",
+send:"Send message",sending:"Sending…",sent:"Your message was sent. Thank you!",err:"Couldn't send right now. Your mail app will open instead.",invalid:"Please fill in every field with a valid email.",
+copy:"Copy email",copied:"Copied ✓",footer:"© {y} Salar · Made with love in Kurdistan",
+aLang:"Language",aTheme:"Toggle dark and light mode",aTop:"Back to top",aFlag:"Flag of Kurdistan",aFilter:"Filter work",testH:"What people say",shareWa:"Share on WhatsApp",copyLink:"Copy link",visitors:"site visits"},
+
+tr:{code:"tr",dir:"ltr",short:"TR",doc:"Salar | Kürdistan'dan yazılım geliştirici",
+brand:"Salar",nAbout:"Hakkımda",nSkills:"Yeteneklerim",nJourney:"Yolculuğum",nWork:"Çalışmalarım",nContact:"İletişim",
+hi:"Merhaba, ben Salar",title:"Kürdistan'dan, fikirleri web sitelerine ve uygulamalara dönüştüren bir yazılım geliştirici",
+lead:"Programlamayı seviyorum; özenle düşünülmüş detaylarla temiz ve hızlı dijital ürünler geliştiriyorum.",cta1:"Çalışmalarımı gör",cta2:"İletişime geç",
+aboutH:"Hakkımda",aboutP1:"Adım Salar, Kürdistan'danım. Programlama tutkum merakla başladı; bugün düşünme ve faydalı şeyler üretme biçimime dönüştü.",
+aboutP2:"İyi kodun geleneksel bir zanaat gibi olduğuna inanıyorum: sabır, hassasiyet ve net bir kimlik.",
+st1:"Proje",st2:"Yıllık öğrenme",st3:"Dil ve araç",skillsH:"Yeteneklerim",journeyH:"Yolculuğum",
+j1t:"Başlangıç",j1h:"İlk kod satırı",j1p:"Merakla başladım: basit HTML sayfaları ve küçük denemeler.",
+j2t:"Derinleşme",j2h:"JavaScript ve React",j2p:"Etkileşimli arayüzler ve eksiksiz uygulamalar geliştirmeye geçtim.",
+j3t:"Genişleme",j3h:"Python ve sunucular",j3p:"Arka planda çalışan API'ler ve araçlar geliştirmeye başladım.",
+j4t:"Bugün",j4h:"Gerçek projeler",j4p:"Temiz ve hızlı ürünler üzerinde çalışıyorum ve her gün öğreniyorum.",
+kuH:"Kürtçe",kuP:"Ana dilimden kelimeler; yaptığım her şeyde yanımda taşırım.",m1:"Merhaba",m2:"Teşekkürler",m3:"Hoş geldin",m4:"Kürdistan",
+workH:"Çalışmalarım",fAll:"Tümü",fWeb:"Web",fTool:"Araçlar",
+c1e:"Web · React",c1h:"Akıllı görev panosu",c1p:"Sürükle-bırak, karanlık mod, otomatik kayıt ve anlık arama içeren görev yöneticisi. React ve TypeScript ile geliştirildi.",
+c2e:"Python · API",c2h:"Bağlantı kısaltma servisi",c2p:"Bağlantıları kısaltan, tıklama istatistikleri, istek sınırı ve otomatik dokümantasyon sunan FastAPI tabanlı hızlı bir REST API.",
+c3e:"Araç · CLI",c3h:"Otomatik dosya düzenleyici",c3p:"İndirilenler klasörünü tek komutla türe ve tarihe göre düzenleyen, geri almayı destekleyen Python komut satırı aracı.",
+contactH:"Birlikte bir şey inşa edelim",contactP:"Bir fikrin ya da projen mi var? Bana yaz, konuşalım.",lName:"Ad",lEmail:"E-posta adresin",lMsg:"Mesajın",
+send:"Mesaj gönder",sending:"Gönderiliyor…",sent:"Mesajın gönderildi. Teşekkürler!",err:"Şu anda gönderilemedi. Bunun yerine e-posta uygulaman açılacak.",invalid:"Lütfen tüm alanları geçerli bir e-postayla doldur.",
+copy:"E-postayı kopyala",copied:"Kopyalandı ✓",footer:"© {y} Salar · Kürdistan'da sevgiyle yapıldı",
+aLang:"Dil",aTheme:"Koyu ve açık modu değiştir",aTop:"Yukarı çık",aFlag:"Kürdistan bayrağı",aFilter:"Çalışmaları filtrele",testH:"Benimle çalışanlar ne diyor",shareWa:"WhatsApp'ta paylaş",copyLink:"Bağlantıyı kopyala",visitors:"ziyaret"},
+
+ku:{code:"ckb",dir:"rtl",short:"KU",doc:"سالار | گەشەپێدەری نەرمەکاڵا لە کوردستان",
+brand:"سالار",nAbout:"دەربارە",nSkills:"تواناکان",nJourney:"گەشتەکەم",nWork:"کارەکانم",nContact:"پەیوەندی",
+hi:"سڵاو، من سالارم",title:"گەشەپێدەری نەرمەکاڵا لە کوردستانەوە، بیرۆکەکان دەکاتە ماڵپەڕ و ئەپ",
+lead:"من عاشقی بەرنامەسازیم، و بەرهەمی دیجیتاڵی پاک و خێرا دروست دەکەم بە وردەکارییەکی لێکۆڵراو.",cta1:"کارەکانم ببینە",cta2:"پەیوەندیم پێوە بکە",
+aboutH:"دەربارەی من",aboutP1:"ناوم سالارە، خەڵکی کوردستانم. خولیام بۆ بەرنامەسازی بە سەرنجڕاکێشی دەستی پێکرد، و بوو بە شێوازێک بۆ بیرکردنەوە و دروستکردنی شتی بەسوود.",
+aboutP2:"باوەڕم وایە کۆدی باش وەک پیشەی کلاسیکییە: ئارام، وردی، و ناسنامەیەکی ڕوون.",
+st1:"پڕۆژە",st2:"ساڵ فێربوون",st3:"زمان و ئامراز",skillsH:"تواناکانم",journeyH:"گەشتەکەم",
+j1t:"سەرەتا",j1h:"یەکەم دێڕی کۆد",j1p:"بە سەرنجڕاکێشی دەستم پێکرد: لاپەڕەی HTMLی سادە و تاقیکردنەوەی بچووک.",
+j2t:"قووڵبوونەوە",j2h:"JavaScript و React",j2p:"گواستمەوە بۆ دروستکردنی ڕووکاری ئینتەراکتیڤ و ئەپی تەواو.",
+j3t:"فراوانبوون",j3h:"Python و سێرڤەر",j3p:"دەستم کرد بە دروستکردنی API و ئامرازی کاردەکەن لە پاشبنەما.",
+j4t:"ئەمڕۆ",j4h:"پڕۆژەی ڕاستەقینە",j4p:"کار لەسەر بەرهەمی پاک و خێرا دەکەم، و ڕۆژانە فێر دەبم.",
+kuH:"بە کوردی",kuP:"وشەگەلێک لە زمانی دایکم، لەگەڵ خۆم دەیانگێڕم لە هەموو شتێکدا کە دروستی دەکەم.",m1:"Hello",m2:"Thank you",m3:"Welcome",m4:"Kurdistan",
+workH:"کارەکانم",fAll:"هەموو",fWeb:"وێب",fTool:"ئامراز",
+c1e:"وێب · React",c1h:"تاختەی ئەرکی زیرەک",c1p:"ئەپێک بۆ بەڕێوەبردنی ئەرک بە ڕاکێشان و دانان، لەگەڵ دۆخی تاریک، پاشەکەوتکردنی خۆکار و گەڕانی دەستبەجێ. بە React و TypeScript دروستکراوە.",
+c2e:"Python · API",c2h:"خزمەتگوزاری کورتکردنەوەی بەستەر",c2p:"ڕووکاری REST ی خێرا بە FastAPI بۆ کورتکردنەوەی بەستەر، لەگەڵ ئامارەکانی کرتە و سنووردارکردنی داواکاری و بەڵگەنامەی خۆکار.",
+c3e:"ئامراز · CLI",c3h:"ڕێکخەری خۆکاری فایل",c3p:"ئامرازێکی هێڵی فەرمان بە Python کە بوخچەی داگرتنەکان بەپێی جۆر و بەروار ڕیز دەکات بە یەک فەرمان، و پاشگەزبوونەوە پشتگیری دەکات.",
+contactH:"با شتێک پێکەوە دروست بکەین",contactP:"بیرۆکە یان پڕۆژەیەکت هەیە؟ نامەم بۆ بنێرە و قسە دەکەین.",lName:"ناو",lEmail:"ئیمەیڵەکەت",lMsg:"نامەکەت",
+send:"نامە بنێرە",sending:"دەنێردرێت…",sent:"نامەکەت نێردرا، سوپاس!",err:"ئێستا نەنێردرا. لەجیاتی ئەوە ئەپی ئیمەیڵەکەت دەکرێتەوە.",invalid:"تکایە هەموو خانەکان پڕ بکەرەوە بە ئیمەیڵێکی دروست.",
+copy:"ئیمەیڵ کۆپی بکە",copied:"کۆپی کرا ✓",footer:"© {y} سالار · بە خۆشەویستی لە کوردستان دروستکراوە",
+aLang:"زمان",aTheme:"گۆڕینی دۆخی تاریک و ڕووناک",aTop:"بگەڕێوە سەرەوە",aFlag:"ئاڵای کوردستان",aFilter:"فلتەرکردنی کارەکان",testH:"ئەوانەی لەگەڵم کاریان کردووە دەڵێن",shareWa:"لە واتسئاپ هاوبەش بکە",copyLink:"لینک کۆپی بکە",visitors:"سەردان"}
+};
+
+var root=document.documentElement;
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var year=new Date().getFullYear();
+var cur="ar";
+function T(k){return I18N[cur][k]}
+
+function splitTitle(){
+  var t=document.getElementById("title");
+  t.innerHTML=t.textContent.trim().split(/\s+/).map(function(w){return '<span class="w">'+w+'</span>'}).join("");
+}
+var first=true;
+function setLang(l){
+  if(!I18N[l])l="ar";
+  cur=l;var d=I18N[l];
+  root.lang=d.code;root.dir=d.dir;document.title=d.doc;
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    var v=d[el.getAttribute("data-i18n")];if(v==null)return;
+    el.textContent=v.replace("{y}",year);
+  });
+  document.querySelectorAll("[data-i18n-aria]").forEach(function(el){el.setAttribute("aria-label",d[el.getAttribute("data-i18n-aria")])});
+  // Kurdish words: meaning labels follow UI language (English labels for the Kurdish UI)
+  document.querySelectorAll(".words span").forEach(function(s){s.lang=(l==="ku")?"en":d.code});
+  document.getElementById("langCode").textContent=d.short;
+  document.querySelectorAll("#langMenu button").forEach(function(b){b.setAttribute("aria-current",b.dataset.lang===l?"true":"false")});
+  splitTitle();
+  if(!first&&window.ScrollTrigger)ScrollTrigger.refresh();
+  try{localStorage.setItem("lang",l)}catch(e){}
+  first=false;
+}
+var saved=null;try{saved=localStorage.getItem("lang")}catch(e){}
+if(!saved){
+  var n=(navigator.language||"ar").toLowerCase();
+  saved=n.indexOf("tr")===0?"tr":n.indexOf("en")===0?"en":(n.indexOf("ku")===0||n.indexOf("ckb")===0)?"ku":"ar";
+}
+setLang(saved);
+
+/* language menu */
+var lb=document.getElementById("langBtn"),lm=document.getElementById("langMenu");
+function closeMenu(){lm.hidden=true;lb.setAttribute("aria-expanded","false")}
+lb.addEventListener("click",function(e){e.stopPropagation();var o=lm.hidden;lm.hidden=!o;lb.setAttribute("aria-expanded",o?"true":"false")});
+lm.addEventListener("click",function(e){var b=e.target.closest("button[data-lang]");if(b){setLang(b.dataset.lang);closeMenu()}});
+document.addEventListener("click",closeMenu);
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeMenu()});
+
+/* theme */
+try{var st=localStorage.getItem("theme");if(st)root.setAttribute("data-theme",st)}catch(e){}
+document.getElementById("theme").addEventListener("click",function(){
+  var c=root.getAttribute("data-theme")||(window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");
+  var nx=c==="light"?"dark":"light";
+  root.setAttribute("data-theme",nx);
+  try{localStorage.setItem("theme",nx)}catch(e){}
+});
+
+/* ripple on every [data-ripple] */
+document.addEventListener("pointerdown",function(e){
+  if(reduce)return;
+  var el=e.target.closest("[data-ripple]");if(!el)return;
+  var r=el.getBoundingClientRect(),s=Math.max(r.width,r.height)*2;
+  var sp=document.createElement("span");sp.className="rip";
+  sp.style.cssText="width:"+s+"px;height:"+s+"px;left:"+(e.clientX-r.left-s/2)+"px;top:"+(e.clientY-r.top-s/2)+"px";
+  el.appendChild(sp);setTimeout(function(){sp.remove()},700);
+});
+
+/* progress + top */
+var prog=document.getElementById("progress"),topBtn=document.getElementById("top");
+function onScroll(){
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  prog.style.transform="scaleX("+(h>0?window.scrollY/h:0)+")";
+  topBtn.classList.toggle("show",window.scrollY>600);
+}
+window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+topBtn.addEventListener("click",function(){window.scrollTo({top:0,behavior:reduce?"auto":"smooth"})});
+
+/* active nav */
+var links=[].slice.call(document.querySelectorAll("nav ul a"));
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting)links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)});
+  })},{rootMargin:"-40% 0px -55% 0px"});
+  links.forEach(function(a){var t=document.querySelector(a.getAttribute("href"));if(t)io.observe(t)});
+}
+
+/* project filter */
+var fb=document.querySelectorAll(".filters button"),cards=document.querySelectorAll(".card");
+fb.forEach(function(b){b.addEventListener("click",function(){
+  fb.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+  cards.forEach(function(c){c.hidden=!(b.dataset.f==="all"||c.dataset.cat.split(" ").indexOf(b.dataset.f)>-1)});
+})});
+
+/* flag tilt */
+var fl=document.getElementById("flagBox");
+if(!reduce&&window.matchMedia("(hover:hover)").matches){
+  fl.addEventListener("pointermove",function(e){
+    var r=fl.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    fl.style.transform="rotateY("+(x*12)+"deg) rotateX("+(-y*10)+"deg)";
+  });
+  fl.addEventListener("pointerleave",function(){fl.style.transform=""});
+}
+
+/* contact form -> sends to MAIL */
+var form=document.getElementById("cf"),send=document.getElementById("send"),note=document.getElementById("note"),sendTxt=document.getElementById("sendTxt");
+function resetSend(){send.disabled=false;send.classList.remove("loading","done");sendTxt.textContent=T("send")}
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  var n=form.name.value.trim(),em=form.email.value.trim(),m=form.message.value.trim();
+  note.className="note";
+  if(!n||!m||!/^\S+@\S+\.\S+$/.test(em)){note.textContent=T("invalid");note.classList.add("bad");return}
+  if(form._honey.value)return;
+  send.disabled=true;send.classList.add("loading");sendTxt.textContent=T("sending");note.textContent="";
+  fetch("https://formsubmit.co/ajax/"+MAIL,{
+    method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+    body:JSON.stringify({name:n,email:em,message:m,_subject:"New message from "+n+" (portfolio)",_replyto:em,_template:"table",_captcha:"false"})
+  }).then(function(r){return r.json()}).then(function(j){
+    if(j&&(j.success===true||j.success==="true")){
+      send.classList.remove("loading");send.classList.add("done");sendTxt.textContent="✓";
+      note.textContent=T("sent");form.reset();setTimeout(resetSend,3000);
+    }else{throw new Error("fail")}
+  }).catch(function(){
+    resetSend();note.textContent=T("err");note.classList.add("bad");
+    location.href="mailto:"+MAIL+"?subject="+encodeURIComponent("Message from "+n)+"&body="+encodeURIComponent(m+"\n\n— "+n+" ("+em+")");
+  });
+});
+
+/* WhatsApp: change only this number (country code + number, digits only) */
+var PHONE="905364789330";
+(function(){
+  var a=document.getElementById("wa");
+  a.href="https://wa.me/"+PHONE;
+})();
+
+/* share + copy link */
+var pageUrl=location.href.split("#")[0];
+document.getElementById("shareWa").addEventListener("click",function(){
+  this.href="https://wa.me/?text="+encodeURIComponent(document.title+"\n"+pageUrl);
+});
+
+/* testimonials: fill "text" and the card appears; empty ones stay hidden */
+var TESTIMONIALS=[
+  {name:"xalo kurdi",text:""}
+];
+(function(){
+  var box=document.getElementById("tcards"),n=0;
+  TESTIMONIALS.forEach(function(x){
+    if(!x.text)return;
+    var a=document.createElement("article");a.className="card t";a.setAttribute("data-reveal","");
+    var p=document.createElement("p");p.textContent=x.text;
+    var c=document.createElement("cite");c.textContent="— "+x.name;
+    a.appendChild(p);a.appendChild(c);box.appendChild(a);n++;
+  });
+  if(n)document.getElementById("voices").hidden=false;
+})();
+
+/* visitor counter (counts once per browser; skipped when opened as a local file) */
+(function(){
+  if(location.protocol==="file:"||location.hostname==="localhost")return;
+  var box=document.getElementById("vis"),num=document.getElementById("visN"),seen=false;
+  try{seen=localStorage.getItem("counted")==="1"}catch(e){}
+  fetch("https://api.counterapi.dev/v1/salar-portfolio-k7q2/visits"+(seen?"":"/up"))
+    .then(function(r){return r.json()})
+    .then(function(j){
+      if(j&&typeof j.count==="number"){
+        num.textContent=j.count.toLocaleString();box.hidden=false;
+        if(!seen){try{localStorage.setItem("counted","1")}catch(e){}}
+      }
+    }).catch(function(){});
+})();
+
+/* copy email */
+document.getElementById("copy").addEventListener("click",function(){
+  var tx=document.getElementById("copyTxt");
+  function ok(){tx.textContent=T("copied");setTimeout(function(){tx.textContent=T("copy")},1800)}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(MAIL).then(ok,function(){})}
+});
+
+document.querySelectorAll("[data-count]").forEach(function(el){if(reduce)el.textContent=el.dataset.count+"+"});
+
+/* ---------- Motion ---------- */
+if(!reduce && window.gsap){
+  gsap.registerPlugin(ScrollTrigger);
+  var lenis=new Lenis({autoRaf:false,lerp:0.1});
+  lenis.on("scroll",ScrollTrigger.update);
+  gsap.ticker.add(function(t){lenis.raf(t*1000)});
+  gsap.ticker.lagSmoothing(0);
+  var navEl=document.querySelector("nav");
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    var id=a.getAttribute("href");if(id==="#")return;
+    a.addEventListener("click",function(e){
+      var t=document.querySelector(id);
+      if(t){e.preventDefault();lenis.scrollTo(t,{offset:-navEl.offsetHeight})}
+    });
+  });
+  topBtn.addEventListener("click",function(){lenis.scrollTo(0)});
+
+  gsap.from(".w",{filter:"blur(12px)",opacity:0,y:-14,duration:.9,ease:"power2.out",stagger:.12,delay:.2});
+  gsap.from(".hi,.lead,.stripe,.hero .cta",{opacity:0,y:16,duration:.8,stagger:.12,delay:.8,ease:"power2.out"});
+
+  gsap.utils.toArray("[data-reveal]").forEach(function(el){
+    gsap.from(el,{y:24,opacity:0,duration:.8,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 88%",once:true}});
+  });
+  document.querySelectorAll(".bar i").forEach(function(b){
+    var l=parseFloat(b.style.getPropertyValue("--l"));
+    gsap.fromTo(b,{scaleX:0},{scaleX:l,duration:1.2,ease:"power2.out",scrollTrigger:{trigger:b,start:"top 92%",once:true}});
+  });
+  document.querySelectorAll("[data-count]").forEach(function(el){
+    var o={v:0},end=+el.dataset.count;
+    ScrollTrigger.create({trigger:el,start:"top 90%",once:true,onEnter:function(){
+      gsap.to(o,{v:end,duration:1.6,ease:"power1.out",onUpdate:function(){el.textContent=Math.round(o.v)+"+"}});
+    }});
+  });
+}
+</script>
+</body>
+</html>
